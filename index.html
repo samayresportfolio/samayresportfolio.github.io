@@ -1,0 +1,662 @@
+@ -0,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam Ayres - Senior Product Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .bg-gradient-text {
+            background: linear-gradient(to right, #2563eb, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .animate-bounce {
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translate3d(0,0,0);
+            }
+            40%, 43% {
+                transform: translate3d(0,-30px,0);
+            }
+            70% {
+                transform: translate3d(0,-15px,0);
+            }
+            90% {
+                transform: translate3d(0,-4px,0);
+            }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .btn-primary {
+            background-color: #0f172a;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1e293b;
+        }
+        
+        .btn-outline {
+            border: 1px solid #e5e7eb;
+            color: #374151;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn-outline:hover {
+            background-color: #f9fafb;
+        }
+        
+        .badge {
+            background-color: #f3f4f6;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .badge-outline {
+            border: 1px solid #e5e7eb;
+            background-color: transparent;
+            color: #6b7280;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-bold">Portfolio</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">About</a>
+                    <a href="#skills" class="text-gray-600 hover:text-gray-900 transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-600 hover:text-gray-900 transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="mobile-menu md:hidden py-4 border-t">
+                <a href="#about" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" onclick="closeMobileMenu()">About</a>
+                <a href="#skills" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" onclick="closeMobileMenu()">Skills</a>
+                <a href="#projects" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" onclick="closeMobileMenu()">Projects</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" onclick="closeMobileMenu()">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
+                    Hi, I'm <span class="bg-gradient-text">Sam Ayres</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Senior Product Designer with 15+ years creating accessible, user-centred digital experiences
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="#contact" class="btn-outline">Get In Touch</a>
+                </div>
+                <div class="flex justify-center space-x-6 mb-12">
+                    <a href="https://samayresportfolio.github.io/" class="text-gray-600 hover:text-gray-900 transition-colors">
+                        <i data-lucide="github" class="h-6 w-6"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/samayres/" class="text-gray-600 hover:text-gray-900 transition-colors">
+                        <i data-lucide="linkedin" class="h-6 w-6"></i>
+                    </a>
+                    <a href="mailto:mr.samayres@gmail.com" class="text-gray-600 hover:text-gray-900 transition-colors">
+                        <i data-lucide="mail" class="h-6 w-6"></i>
+                    </a>
+                </div>
+                <a href="#about" class="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors">
+                    <i data-lucide="arrow-down" class="h-5 w-5 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">About Me</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <div class="card overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9c63c4e9-0401-4f83-ab7f-bc01135c170b.JPG-6FGZ6KmYLmtXMuwvPMQJ2YXR3u2hg0.jpeg" alt="Sam Ayres" class="w-full h-auto">
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-600">
+                            I am a Senior Product Designer with over 15 years of experience in UX, service design, and digital
+                            transformation. I specialise in creating accessible, user-centred services that align with both
+                            organisational goals and user needs, with deep experience across public and private sectors.
+                        </p>
+                        <p class="text-lg text-gray-600">
+                            I bring particular focus on innovative UX following accessibility standards, end-to-end product
+                            delivery, and design system implementation. My approach combines strategic thinking with hands-on
+                            problem-solving skills, from ideation to implementation.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-center mb-6">
+                            <div>
+                                <div class="text-2xl font-bold text-blue-600">100+</div>
+                                <div class="text-sm text-gray-600">Projects Delivered</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-blue-600">15+</div>
+                                <div class="text-sm text-gray-600">Years Experience</div>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1OBgLo3rpsYUhilcYpdV_Zy1UBgY7osfB/view" target="_blank" class="btn-primary w-full justify-center">
+                            <i data-lucide="download" class="h-4 w-4 mr-2"></i>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Skills & Technologies</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-center mb-4">Research & Strategy</h3>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="badge">User Research</span>
+                            <span class="badge">Service Design</span>
+                            <span class="badge">Journey Mapping</span>
+                            <span class="badge">Usability Testing</span>
+                            <span class="badge">Workshop Facilitation</span>
+                            <span class="badge">Stakeholder Engagement</span>
+                        </div>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-center mb-4">Design & Delivery</h3>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="badge">Figma</span>
+                            <span class="badge">Design Systems</span>
+                            <span class="badge">Prototyping</span>
+                            <span class="badge">WCAG 2.1 AA</span>
+                            <span class="badge">GDS Design System</span>
+                            <span class="badge">Agile/Scrum</span>
+                        </div>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-center mb-4">Tools & Platforms</h3>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="badge">Miro</span>
+                            <span class="badge">Dovetail</span>
+                            <span class="badge">Optimal Workshop</span>
+                            <span class="badge">UserZoom</span>
+                            <span class="badge">Medallia</span>
+                            <span class="badge">ServiceNow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Featured Projects</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Mercedes-Benz Project -->
+                    <div class="card overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mercedes-Htk8ZBEKg7NbvH6tVh6i2tGZDZIZcb.png" alt="Mercedes-Benz Training Platform" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold mb-2">Mercedes-Benz Training Platform</h3>
+                            <p class="text-sm text-gray-600 mb-4">Complete redesign of employee Training App and Development Website, creating a unified learning ecosystem for staff across global markets with increased user engagement and course completion rates.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="badge-outline">Design Systems</span>
+                                <span class="badge-outline">Mobile & Desktop UX</span>
+                                <span class="badge-outline">Global Platforms</span>
+                                <span class="badge-outline">Learning Paths</span>
+                            </div>
+                            <a href="case-study-mercedes.html" class="btn-primary w-full justify-center">
+                                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Worcester Bosch Project -->
+                    <div class="card overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Bosch-PdvpYkGOuRyXxawjAD1ALBETl86UAp.png" alt="Worcester Bosch B2B Platforms" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold mb-2">Worcester Bosch B2B Platforms</h3>
+                            <p class="text-sm text-gray-600 mb-4">Unified design system across loyalty portal, spec portal, and mobile app. Improved installer onboarding experience and increased client satisfaction through role-based user experiences.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="badge-outline">B2B UX</span>
+                                <span class="badge-outline">Design Systems</span>
+                                <span class="badge-outline">User Interviews</span>
+                                <span class="badge-outline">Role-Based Design</span>
+                            </div>
+                            <a href="#" class="btn-primary w-full justify-center">
+                                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Scotland's People Project -->
+                    <div class="card overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ScotlandsPeople-LtHHbku3tFHveNeftn8PeYEB8tLrat.png" alt="Scotland's People Accessibility" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold mb-2">Scotland's People Accessibility</h3>
+                            <p class="text-sm text-gray-600 mb-4">Redesigned for full WCAG 2.2 AA compliance following GDS guidelines. Enhanced accessibility for users with disabilities, expanding audience reach and improving usability for all users.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="badge-outline">WCAG 2.2 AA</span>
+                                <span class="badge-outline">GDS Guidelines</span>
+                                <span class="badge-outline">Accessibility</span>
+                                <span class="badge-outline">Tree Testing</span>
+                            </div>
+                            <a href="#" class="btn-primary w-full justify-center">
+                                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Virgin Atlantic Project -->
+                    <div class="card overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Virgin-77dLhwGZPSnfy0VIAStpPyREc9MJ8J.png" alt="Virgin Atlantic Booking Redesign" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold mb-2">Virgin Atlantic Booking Redesign</h3>
+                            <p class="text-sm text-gray-600 mb-4">Post-COVID booking process and homepage redesign addressing new travel regulations. Simplified user journeys led to higher conversion rates and improved user satisfaction.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="badge-outline">User Research</span>
+                                <span class="badge-outline">Journey Mapping</span>
+                                <span class="badge-outline">COVID Response</span>
+                                <span class="badge-outline">Conversion Optimization</span>
+                            </div>
+                            <a href="#" class="btn-primary w-full justify-center">
+                                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- British Airways Project -->
+                    <div class="card overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/British%20Airways-2tuvLOUjlxyfArzEhEpEhxliXJUH6A.png" alt="British Airways COVID Documentation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold mb-2">British Airways COVID Documentation</h3>
+                            <p class="text-sm text-gray-600 mb-4">Digital solution for COVID document collection, reducing airport congestion through streamlined UX. MVP launched in India and scaled globally using agile methodology.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="badge-outline">Service Design</span>
+                                <span class="badge-outline">MVP Development</span>
+                                <span class="badge-outline">Global Scaling</span>
+                                <span class="badge-outline">Digital Transformation</span>
+                            </div>
+                            <a href="#" class="btn-primary w-full justify-center">
+                                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Vodafone Project -->
+                    <div class="card overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eCare-ZSV53iShyV253u8RBJKM2of8aK8mFt.png" alt="Vodafone eCare Platform" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold mb-2">Vodafone eCare Platform</h3>
+                            <p class="text-sm text-gray-600 mb-4">Award-winning 3-year eCare redesign (CXA 2022 Best Digital Transformation). Significantly reduced support calls through enhanced self-service customer experience.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="badge-outline">Self-Service UX</span>
+                                <span class="badge-outline">Award-Winning</span>
+                                <span class="badge-outline">Customer Experience</span>
+                                <span class="badge-outline">Mobile-First</span>
+                            </div>
+                            <a href="#" class="btn-primary w-full justify-center">
+                                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Nutrimum Project -->
+                    <div class="card overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nutrimum-lQdNoWTRxVthe2yfxrI2gfqNP0orVX.png" alt="Nutrimum Maternal Health" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold mb-2">Nutrimum Maternal Health</h3>
+                            <p class="text-sm text-gray-600 mb-4">Positioned cereal bars as supplement alternative for pregnant/breastfeeding mothers. 35% increase in user engagement through trust-building content and stage-specific navigation.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="badge-outline">Health Tech</span>
+                                <span class="badge-outline">Maternal UX</span>
+                                <span class="badge-outline">Trust Building</span>
+                                <span class="badge-outline">Journey Mapping</span>
+                            </div>
+                            <a href="#" class="btn-primary w-full justify-center">
+                                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tesco Project -->
+                    <div class="card overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tesco-5dHf8dejWY5PUKZFxeS2SCZASRTOR3.png" alt="Tesco Real Food Innovation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold mb-2">Tesco Real Food Innovation</h3>
+                            <p class="text-sm text-gray-600 mb-4">Enhanced UK's third-largest recipe site (3.7M monthly users) through data-led innovation. +3% perception increase among non-website users via multichannel strategy.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="badge-outline">Data Analytics</span>
+                                <span class="badge-outline">Content Strategy</span>
+                                <span class="badge-outline">Interactive Tools</span>
+                                <span class="badge-outline">Multi-channel</span>
+                            </div>
+                            <a href="#" class="btn-primary w-full justify-center">
+                                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Heathrow Project -->
+                    <div class="card overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Heathrow-jewfnBht5oOPPQoilZuVkK4UQGl5WH.png" alt="Heathrow Airport Wayfinding" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold mb-2">Heathrow Airport Wayfinding</h3>
+                            <p class="text-sm text-gray-600 mb-4">Transformed passenger experience for 80 million annual passengers through unified mapping solution and digital wayfinding interface, reducing stress and improving navigation.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="badge-outline">Wayfinding Design</span>
+                                <span class="badge-outline">Digital Innovation</span>
+                                <span class="badge-outline">Information Architecture</span>
+                                <span class="badge-outline">Passenger Experience</span>
+                            </div>
+                            <a href="#" class="btn-primary w-full justify-center">
+                                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Work Experience</h2>
+                <div class="space-y-6">
+                    <div class="card p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Senior Product Designer</h3>
+                                <p class="text-lg font-medium text-blue-600">Cyber-Duck / CACI</p>
+                            </div>
+                            <span class="badge">Nov 2023 – Present</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Supporting discovery and delivery for Worcester Bosch, Dexcom, and ScotlandsPeople. Leading UI and user research, and helping establish design systems.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge">Design Systems</span>
+                            <span class="badge">User Research</span>
+                            <span class="badge">Discovery</span>
+                            <span class="badge">Delivery</span>
+                        </div>
+                    </div>
+
+                    <div class="card p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Senior / Lead Product Designer</h3>
+                                <p class="text-lg font-medium text-blue-600">Virgin Atlantic</p>
+                            </div>
+                            <span class="badge">May 2022 – May 2023</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Redesigned homepage and managed booking flow post-COVID. Conducted user research and implemented new booking experience aligned with evolving travel needs.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge">User Research</span>
+                            <span class="badge">Booking UX</span>
+                            <span class="badge">COVID Response</span>
+                            <span class="badge">Travel Industry</span>
+                        </div>
+                    </div>
+
+                    <div class="card p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Senior / Lead Product Designer</h3>
+                                <p class="text-lg font-medium text-blue-600">British Airways</p>
+                            </div>
+                            <span class="badge">Sep 2021 – Mar 2022</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Developed and launched BA's COVID documentation app. Designed MVP in India and scaled globally.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge">MVP Design</span>
+                            <span class="badge">Global Scaling</span>
+                            <span class="badge">Health Tech</span>
+                            <span class="badge">Digital Transformation</span>
+                        </div>
+                    </div>
+
+                    <div class="card p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Lead UX Designer</h3>
+                                <p class="text-lg font-medium text-blue-600">Vodafone</p>
+                            </div>
+                            <span class="badge">2018 – 2021</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Led a 3-year eCare redesign and service portal project. Won Best Digital Transformation at CXA 2022.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge">Service Design</span>
+                            <span class="badge">eCare Platform</span>
+                            <span class="badge">Award-Winning</span>
+                            <span class="badge">3-Year Project</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Get In Touch</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Let's work together</h3>
+                            <p class="text-gray-600 mb-6">
+                                I'm always excited to discuss new UX challenges and opportunities. Whether you're looking for
+                                freelance, contract, or permanent collaboration, let's connect and explore how we can create
+                                meaningful digital experiences together!
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="mail" class="h-5 w-5 text-blue-600"></i>
+                                <span>mr.samayres@gmail.com</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="phone" class="h-5 w-5 text-blue-600"></i>
+                                <span>+44 (0)7468 452865</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="map-pin" class="h-5 w-5 text-blue-600"></i>
+                                <span>United Kingdom</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-semibold mb-2">Send a Message</h3>
+                        <p class="text-gray-600 mb-6">Fill out the form below and I'll get back to you as soon as possible.</p>
+                        <form class="space-y-4" onsubmit="handleFormSubmit(event)">
+                            <div>
+                                <input type="text" name="name" placeholder="Your Name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <input type="email" name="email" placeholder="Your Email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <textarea name="message" placeholder="Your Message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full justify-center">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-600">© 2024 Sam Ayres. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://samayresportfolio.github.io/" class="text-gray-600 hover:text-gray-900 transition-colors">
+                        <i data-lucide="github" class="h-5 w-5"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/samayres/" class="text-gray-600 hover:text-gray-900 transition-colors">
+                        <i data-lucide="linkedin" class="h-5 w-5"></i>
+                    </a>
+                    <a href="mailto:mr.samayres@gmail.com" class="text-gray-600 hover:text-gray-900 transition-colors">
+                        <i data-lucide="mail" class="h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.classList.remove('active');
+        }
+
+        // Form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            const mailtoLink = `mailto:mr.samayres@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            event.target.reset();
+            
+            alert('Thank you for your message! Your email client should open with the message ready to send.');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
